@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import Select from "react-dropdown-select";
 
@@ -40,7 +39,7 @@ export interface DataProps {
 
 export const Form = ({ withSearches, multiple, outline }: DataProps) => {
 
-  const [value, setValue] = React.useState();
+  const [, setValue] = React.useState();
 
   return (
     <>
@@ -48,18 +47,18 @@ export const Form = ({ withSearches, multiple, outline }: DataProps) => {
         withSearches || outline ? (
           <div className="header">
             <label htmlFor="">Label</label>
-            <Select options={options} onChange={(values) => setValue(values)} />
+            <Select options={options} onChange={(values: Array): void => setValue(values)} />
           </div>
         ) : multiple ? (
           <div className="header">
             <label htmlFor="">Label</label>
-            <Select multi options={options} onChange={(values) => setValue(values)} />
+            <Select multi options={options} onChange={(values: Array): void => setValue(values)} />
 
           </div>
         ) : (
           <div className="header">
             <label htmlFor="">Label</label>
-            <Select disabled options={options} onChange={(values) => setValue(values)} />
+            <Select disabled options={options} onChange={(values: Array): void => setValue(values)} />
 
           </div>
         )
