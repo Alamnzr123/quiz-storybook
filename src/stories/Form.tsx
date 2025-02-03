@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import Select from "react-dropdown-select";
 
@@ -37,7 +38,7 @@ export interface DataProps {
   outline?: boolean;
 }
 
-export const Form = ({ user, withSearches, multiple, optionLabel, onChange, outline }: DataProps) => {
+export const Form = ({ withSearches, multiple, outline }: DataProps) => {
 
   const [value, setValue] = React.useState();
 
