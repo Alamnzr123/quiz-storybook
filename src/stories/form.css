@@ -1,0 +1,23 @@
+.header {
+  font-size: x-large;
+  color: black;
+  margin-left: 20px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+label {
+  margin-right: 200px;
+}
+
+input[type="search"] {
+  width: 1000px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
