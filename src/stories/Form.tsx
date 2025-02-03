@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import Select from "react-dropdown-select";
 
@@ -33,7 +35,7 @@ export interface DataProps {
   withSearches?: boolean;
   multiple?: boolean;
   optionLabel?: () => void;
-  onChange?: () => void;
+  onChange?: (e: unknown) => void;
   outline?: boolean;
 }
 
@@ -47,18 +49,18 @@ export const Form = ({ withSearches, multiple, outline }: DataProps) => {
         withSearches || outline ? (
           <div className="header">
             <label htmlFor="">Label</label>
-            <Select options={options} onChange={(values: Array): void => setValue(values)} />
+            <Select options={options} onChange={(values: any) => setValue(values)} values={[]} />
           </div>
-        ) : multiple ? (
+        ) : multiple || withSearches ? (
           <div className="header">
             <label htmlFor="">Label</label>
-            <Select multi options={options} onChange={(values: Array): void => setValue(values)} />
+            <Select multi options={options} onChange={(values: any) => setValue(values)} values={[]} />
 
           </div>
         ) : (
           <div className="header">
             <label htmlFor="">Label</label>
-            <Select disabled options={options} onChange={(values: Array): void => setValue(values)} />
+            <Select disabled options={options} onChange={(values: any) => setValue(values)} values={[]} />
 
           </div>
         )
